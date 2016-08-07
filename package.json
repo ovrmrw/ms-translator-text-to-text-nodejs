@@ -4,8 +4,8 @@
   "description": "Microsoft Translator API sample. Text-to-Text translation for Node.js.",
   "main": "index.js",
   "scripts": {
-    "prestart": "tsc -p .",
-    "start": "babel-node --presets es2015 translator.js",
+    "postinstall": "node lib/overwrite-modules.js",
+    "start": "node --require ts-babel-node/register translator.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,13 +20,19 @@
   },
   "homepage": "https://github.com/ovrmrw/ms-translator-text-to-text-nodejs#readme",
   "devDependencies": {
-    "babel-cli": "^6.7.7",
-    "babel-preset-es2015": "^6.6.0",
-    "typescript": "^1.8.10",
-    "typings": "^0.8.1"
+    "@types/lodash": "0.0.26-alpha",
+    "@types/node": "^6.0.31",
+    "@types/request": "0.0.28",
+    "@types/xml2js": "0.0.27",
+    "babel-preset-es2015": "^6.9.0",
+    "fs-extra": "^0.30.0",
+    "ts-babel-node": "^1.0.0",
+    "ts-node": "^0.9.3",
+    "typescript": "^2.0.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.7.4",
+    "babel-polyfill": "^6.9.1",
+    "lodash": "^4.13.1",
     "request": "^2.72.0",
     "xml2js": "^0.4.16"
   }

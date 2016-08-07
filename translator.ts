@@ -1,10 +1,6 @@
 /*
   MicrosoftのTranslator APIを使ってText-to-Textの翻訳をするサンプル。
   https://www.microsoft.com/en-us/translator
-  
-  es2015形式でJSにトランスパイルした後、babel-nodeで実行すると簡単です。
-  
-  Dependencies: request, xml2js, babel-polyfill
 */
 
 import 'babel-polyfill'; // async/awaitを書くなら必要。
@@ -53,14 +49,14 @@ const azureDataMarketClientSecret = azureDataMarket.ClientSecret;
   // AccessTokenを取得してTranslateするまで。
   try {
     // 翻訳にかけたいテキスト。
-    const text = 'Introduction to data analysis with Python';
+    const text = 'Node.jsでデータ分析';
 
     // request.getでbodyを取得する。accessTokenがないとエラーになる。awaitでPromiseを待機する。
     const body = await new Promise<string>((resolve, reject) => {
       request(
         {
           method: 'get',
-          url: 'http://api.microsofttranslator.com/v2/Http.svc/Translate' + `?text=${encodeURI(text)}&from=en&to=ja`,
+          url: 'http://api.microsofttranslator.com/v2/Http.svc/Translate' + `?text=${encodeURI(text)}&from=ja&to=en`,
           headers: {
             'Authorization': 'Bearer ' + accessToken
           }
