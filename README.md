@@ -15,6 +15,12 @@ This is a simple sample to try out MS Translator API Text-to-Text Translation.
 }
 ```
 
+||My Environments|
+|:--|:--|
+|OS|Windows 10 64bit|
+|Editor|VSCode (stable)|
+|node -v|6.3.1|
+
 ### How to setup.
 ```
 npm install
